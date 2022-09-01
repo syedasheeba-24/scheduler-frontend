@@ -41,7 +41,7 @@ function AddClass() {
       };
       axios
         .post(
-          "https://qrcode-backend-syeda.herokuapp.com/api/class",
+          "https://scheduler-backend-syeda.herokuapp.com/api/class",
           classObject
         )
         .then(() => {

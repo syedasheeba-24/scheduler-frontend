@@ -29,7 +29,7 @@ function AddTeacher() {
     };
     axios
       .post(
-        "https://qrcode-backend-syeda.herokuapp.com/api/teacher",
+        "https://scheduler-backend-syeda.herokuapp.com/api/teacher",
         teacherObject
       )
       .then(() => {

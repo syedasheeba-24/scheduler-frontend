@@ -11,7 +11,7 @@ function ViewTeacher(props) {
   });
   useEffect(() => {
     axios
-      .get("https://qrcode-backend-syeda.herokuapp.com/api/teacher/" + id)
+      .get("https://scheduler-backend-syeda.herokuapp.com/api/teacher/" + id)
       .then((res) => {
         setTeacherOb(res.data);
       });

@@ -7,7 +7,7 @@ function TeacherList() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://qrcode-backend-syeda.herokuapp.com/api/teacher")
+      .get("https://scheduler-backend-syeda.herokuapp.com/api/teacher")
       .then((res) => {
         setListOfTeacher(res.data);
       });

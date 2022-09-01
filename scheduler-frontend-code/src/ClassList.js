@@ -7,7 +7,7 @@ function ClassList() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("https://qrcode-backend-syeda.herokuapp.com/api/class")
+      .get("https://scheduler-backend-syeda.herokuapp.com/api/class")
       .then((res) => {
         setListOfClass(res.data);
       });
@@ -26,7 +26,7 @@ function ClassList() {
   const handleDeleteClass = (event, id) => {
     event.preventDefault();
     axios
-      .delete("https://qrcode-backend-syeda.herokuapp.com/api/class/" + id)
+      .delete("https://scheduler-backend-syeda.herokuapp.com/api/class/" + id)
       .then(() => {
         setListOfClass(listOfClass.filter((val) => val.classid !== id));
       });
@@ -34,7 +34,10 @@ function ClassList() {
 
   const handleDownload = (classBody) => {
     axios
-      .post("https://qrcode-backend-syeda.herokuapp.com/api/excel", classBody)
+      .post(
+        "https://scheduler-backend-syeda.herokuapp.com/api/excel",
+        classBody
+      )
       .then(() => {
         alert(
           "Time table successfully downloaded for class with id" +

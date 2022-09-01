@@ -13,7 +13,7 @@ function ViewClass(props) {
   });
   useEffect(() => {
     axios
-      .get("https://qrcode-backend-syeda.herokuapp.com/api/class/" + id)
+      .get("https://scheduler-backend-syeda.herokuapp.com/api/class/" + id)
       .then((res) => {
         setClassOb(res.data);
       });
