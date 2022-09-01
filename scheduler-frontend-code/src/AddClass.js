@@ -39,9 +39,14 @@ function AddClass() {
         strength: classStrength,
         subjects: subjectString,
       };
-      axios.post("/api/class", classObject).then(() => {
-        navigate("/classlist");
-      });
+      axios
+        .post(
+          "https://qrcode-backend-syeda.herokuapp.com/api/class",
+          classObject
+        )
+        .then(() => {
+          navigate("/classlist");
+        });
       navigate("/classlist");
     }
   };

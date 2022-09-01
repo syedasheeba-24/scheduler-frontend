@@ -6,9 +6,11 @@ function TeacherList() {
   const [listOfTeacher, setListOfTeacher] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get("/api/teacher").then((res) => {
-      setListOfTeacher(res.data);
-    });
+    axios
+      .get("https://qrcode-backend-syeda.herokuapp.com/api/teacher")
+      .then((res) => {
+        setListOfTeacher(res.data);
+      });
   }, []);
 
   const addTeacher = (event) => {

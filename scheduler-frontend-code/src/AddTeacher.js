@@ -27,9 +27,14 @@ function AddTeacher() {
       subject: subject,
       classes: classString,
     };
-    axios.post("/api/teacher", teacherObject).then(() => {
-      navigate("/teacherlist");
-    });
+    axios
+      .post(
+        "https://qrcode-backend-syeda.herokuapp.com/api/teacher",
+        teacherObject
+      )
+      .then(() => {
+        navigate("/teacherlist");
+      });
     navigate("/teacherlist");
   };
 

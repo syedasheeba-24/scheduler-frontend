@@ -10,9 +10,11 @@ function ViewTeacher(props) {
     classes: "",
   });
   useEffect(() => {
-    axios.get("/api/teacher/" + id).then((res) => {
-      setTeacherOb(res.data);
-    });
+    axios
+      .get("https://qrcode-backend-syeda.herokuapp.com/api/teacher/" + id)
+      .then((res) => {
+        setTeacherOb(res.data);
+      });
   });
   return (
     <div>

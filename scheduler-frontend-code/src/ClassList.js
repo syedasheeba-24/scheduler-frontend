@@ -6,9 +6,11 @@ function ClassList() {
   const [listOfClass, setListOfClass] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get("/api/class").then((res) => {
-      setListOfClass(res.data);
-    });
+    axios
+      .get("https://qrcode-backend-syeda.herokuapp.com/api/class")
+      .then((res) => {
+        setListOfClass(res.data);
+      });
   }, []);
 
   const addClass = (event) => {
@@ -23,19 +25,23 @@ function ClassList() {
 
   const handleDeleteClass = (event, id) => {
     event.preventDefault();
-    axios.delete("/api/class/" + id).then(() => {
-      setListOfClass(listOfClass.filter((val) => val.classid !== id));
-    });
+    axios
+      .delete("https://qrcode-backend-syeda.herokuapp.com/api/class/" + id)
+      .then(() => {
+        setListOfClass(listOfClass.filter((val) => val.classid !== id));
+      });
   };
 
   const handleDownload = (classBody) => {
-    axios.post("/api/excel", classBody).then(() => {
-      alert(
-        "Time table successfully downloaded for class with id" +
-          classBody.classid +
-          " under resources folder."
-      );
-    });
+    axios
+      .post("https://qrcode-backend-syeda.herokuapp.com/api/excel", classBody)
+      .then(() => {
+        alert(
+          "Time table successfully downloaded for class with id" +
+            classBody.classid +
+            " under resources folder."
+        );
+      });
   };
 
   return (

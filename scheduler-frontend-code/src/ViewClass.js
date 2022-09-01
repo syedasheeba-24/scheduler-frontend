@@ -12,9 +12,11 @@ function ViewClass(props) {
     subjects: "",
   });
   useEffect(() => {
-    axios.get("/api/class/" + id).then((res) => {
-      setClassOb(res.data);
-    });
+    axios
+      .get("https://qrcode-backend-syeda.herokuapp.com/api/class/" + id)
+      .then((res) => {
+        setClassOb(res.data);
+      });
   });
   return (
     <div>
